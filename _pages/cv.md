@@ -69,9 +69,9 @@ Service and leadership
 <embed src="StevenPatrickFlynn.github.io/_pages/CVStevenFlynn.pdf" width="500" height="500" type="application/pdf"><\embed>
 --->
 
-<object data="http://localhost:4000/_pages/CVStevenFlynn.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="http://localhost:4000/_pages/CVStevenFlynn.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://localhost:4000/_pages/CVStevenFlynn.pdf">Download PDF</a>.</p>
+<object data="http://stevenpatrickflynn.github.io/_pages/CVStevenFlynn.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="http://stevenpatrickflynn.github.io/_pages/CVStevenFlynn.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://stevenpatrickflynn.github.io/_pages/CVStevenFlynn.pdf">Download PDF</a>.</p>
     </embed>
 </object>
 
