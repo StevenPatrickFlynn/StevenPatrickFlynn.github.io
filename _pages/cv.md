@@ -1,14 +1,18 @@
 ---
 layout: archive
-title: "CV"
+title: ""
 permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
 
+
+
 {% include base_path %}
 
+
+<!--
 Education
 ======
 * B.S. in GitHub, GitHub University, 2012
@@ -57,3 +61,17 @@ Teaching
 Service and leadership
 ======
 * Currently signed in to 43 different slack teams
+-->
+
+
+
+<!--
+<embed src="StevenPatrickFlynn.github.io/_pages/CVStevenFlynn.pdf" width="500" height="500" type="application/pdf"><\embed>
+--->
+
+<object data="http://localhost:4000/_pages/CVStevenFlynn.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="http://localhost:4000/_pages/CVStevenFlynn.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://localhost:4000/_pages/CVStevenFlynn.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
