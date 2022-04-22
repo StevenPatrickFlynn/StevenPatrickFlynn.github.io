@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Steven Flynn"
 title_separator          : "-"
 name                     : &name "Steven Flynn"
-description              : &description "personal description"
+description              : &description "I ama postdoctoral reasearcher at the University of Bath"
 url                      : https://StevenPatrickFlynn.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "StevenPatrickFlynn/StevenPatrickFlynn.github.io"
@@ -83,10 +83,10 @@ author:
   name             : "Steven Flynn"
   avatar           : "profile.png"
   bio              : "Postdoctoral Researcher"
-  location         : "Location"
+  location         : "Office: Building 6W Room 1.5, University of Bath, Claverton Down, Bath BA2 7AY, UK"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  googlescholar    : "https://scholar.google.com/citations?hl=en&user=pbIjkkYAAAAJ"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
