@@ -1,10 +1,16 @@
 ---
 layout: archive
-title: "Publications"
+title: "Publications and Preprints"
 permalink: /publications/
 author_profile: true
 ---
+* Geometric Invariance of the Semi-Classical calculus on Nilpotent Graded Lie groups (with [Coltilde Fermanian-Kammerer](https://perso.math.u-pem.fr/fermanian.clotilde/)) and [Veronique Fischer](https://people.bath.ac.uk/vcmf20/)) (preprint) arXiv. [Link](https://arxiv.org/abs/2112.11509)<br/>
 
+* Injectivity of the X-ray Transform on the Heisenberg group, <i>Journal of Functional Analysis</i> [Link](https://doi.org/10.1016/j.jfa.2020.108886) <br/>
+
+* Unraveling Geodesic X-ray Transforms on the Heisenberg group (Ph.D. Thesis). [Link](https://escholarship.org/uc/item/2661t4n7)<br/>
+
+<!--
 {% if author.googlescholar %}
   You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
 {% endif %}
@@ -14,3 +20,4 @@ author_profile: true
 {% for post in site.publications reversed %}
   {% include archive-single.html %}
 {% endfor %}
+-->
