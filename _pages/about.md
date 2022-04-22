@@ -15,4 +15,4 @@ In Fall 2019 I was a program assistant at the Mathematical Sciences Research Ins
 
 My broad research interests are geometric mechanics (sub-riemannian geometry), harmonic analysis on groups, and inverse problems. 
 
-google-site-verification=EVL6KoVJmnRFu3onuJbFv94rE5wGenZYYrzCCbxkpOg
+
