@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Steven Flynn"
 title_separator          : "-"
 name                     : &name "Steven Flynn"
-description              : &description "I am a postdoctoral reasearcher at the University of Bath"
+description              : &description "I ama postdoctoral reasearcher at the University of Bath"
 url                      : https://StevenPatrickFlynn.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "StevenPatrickFlynn/StevenPatrickFlynn.github.io"
@@ -82,10 +82,10 @@ analytics:
 author:
   name             : "Steven Flynn"
   avatar           : "profile.png"
-  bio              : "Postdoctoral Researcher <br/> University of Bath"
-  location         : "Office: 6W Room 1.5 <br/> University of Bath <br/> Claverton Down <br/> Bath BA2 7AY, UK"
+  bio              : "Postdoctoral Researcher"
+  location         : "Office: Building 6W Room 1.5, University of Bath, Claverton Down, Bath BA2 7AY, UK"
   employer         :
-  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=pbIjkkYAAAAJ"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
@@ -103,13 +103,13 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "https://orcid.org/0000-0003-4987-4027"
+  orcid            : "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : #"replacethistwitterhandle"
+  twitter          : "replacethistwitterhandle"
   vine             :
   weibo            :
   xing             :
