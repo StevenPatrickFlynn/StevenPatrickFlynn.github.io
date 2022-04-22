@@ -14,3 +14,5 @@ I received my Ph.D. in 2020 at the University of California, Santa Cruz under th
 In Fall 2019 I was a program assistant at the Mathematical Sciences Research Instute in the semester program in Micolocal Analysis. <br/>
 
 My broad research interests are geometric mechanics (sub-riemannian geometry), harmonic analysis on groups, and inverse problems. 
+
+google-site-verification=EVL6KoVJmnRFu3onuJbFv94rE5wGenZYYrzCCbxkpOg
