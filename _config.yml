@@ -82,11 +82,11 @@ analytics:
 author:
   name             : "Steven Flynn"
   avatar           : "profile.png"
-  bio              : "Postdoctoral Researcher"
-  location         : "Office: Building 6W Room 1.5, University of Bath, Claverton Down, Bath BA2 7AY, UK"
+  bio              : "Postdoctoral Researcher <br/> University of Bath"
+  location         : "Office:6W Room 1.5 <br/> University of Bath <br/> Claverton Down, Bath BA2 7AY, UK"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "https://scholar.google.com/citations?hl=en&user=pbIjkkYAAAAJ"
+  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  googlescholar    : "https://scholar.google.com/citations?user=pbIjkkYAAAAJ&hl=en"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -96,20 +96,20 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "StevenPatrickFlynn"
+  github           : #"StevenPatrickFlynn"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0003-4987-4027"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : #"replacethistwitterhandle"
   vine             :
   weibo            :
   xing             :
