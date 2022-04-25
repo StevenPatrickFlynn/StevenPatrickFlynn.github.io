@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
     
-I am a postdoc in mathematics at the University of Bath, funded by a grant through Leverhulme Trust under [Véronique Ficher](https://people.bath.ac.uk/vcmf20/) (PI) and [Clotilde Fermanian](https://perso.math.u-pem.fr/fermanian.clotilde/) (Co-PI).  <br/>
+I am a postdoc in mathematics at the University of Bath, supported  by the Research Project Grant (RPG-2020-037: Quantum limits for sub-elliptic operators) funded by the Leverhulme Trust under [Véronique Ficher](https://people.bath.ac.uk/vcmf20/) (PI) and [Clotilde Fermanian](https://perso.math.u-pem.fr/fermanian.clotilde/) (Co-PI).  <br/>
 
 I received my Ph.D. in 2020 at the University of California, Santa Cruz under the supervision of Richard Montgomery and François Monard. <br/>
 
