@@ -8,7 +8,6 @@ redirect_from:
   - /about.html
 ---
     
-<meta name="google-site-verification" content="pvq8UzP1KXAHQeGuSj1KdagArzg5r-ss1Y1gCZ9NCTI" />
 I am a postdoc in mathematics at the University of Bath, funded by a grant the Leverhulme Trust under [Véronique Ficher](https://people.bath.ac.uk/vcmf20/) (PI) and [Clotilde Fermanian](https://perso.math.u-pem.fr/fermanian.clotilde/) (Co-PI).  <br/>
 
 I received my Ph.D. in 2020 at the University of California, Santa Cruz under the supervision of Richard Montgomery and François Monard. <br/>
