@@ -16,5 +16,4 @@ In Fall 2019 I was a program assistant at the Mathematical Sciences Research Ins
 
 My broad research interests are geometric mechanics (sub-riemannian geometry), harmonic analysis on groups, and inverse problems. 
 
- My University of Bath webpage is [here](http://people.bath.ac.uk/spf34), but is secondary to this one.  
-
+ My University of Bath webpage is [here](http://people.bath.ac.uk/spf34).
