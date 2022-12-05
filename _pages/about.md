@@ -14,6 +14,6 @@ I received my Ph.D. in 2020 at the University of California, Santa Cruz under th
 
 In Fall 2019 I was a program assistant at the Mathematical Sciences Research Instute at  UC Berkeley in the semester program in Micolocal Analysis. <br/>
 
-My broad research interests are geometric mechanics (sub-riemannian geometry), harmonic analysis on groups, and inverse problems. 
+My broad research interests are geometric mechanics (sub-riemannian geometry), harmonic analysis on groups, and inverse problems.1 
 
  My University of Bath webpage is [here](http://people.bath.ac.uk/spf34).
