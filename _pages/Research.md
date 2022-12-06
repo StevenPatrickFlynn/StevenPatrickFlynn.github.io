@@ -14,9 +14,9 @@ I am interested in the analysis of operators on sub-riemannian manifolds (partic
 <b>Integral geometry and X-ray transforms on Carnot Groups:</b>
 * Proving injectivity and stability of X-ray transforms on Carnot Lie groups.
 
-<b>Dynamics or a prticle in a Yang-Mills field</b>
-*Study the scattering map and the X-ray transform for a particle in a Yang-Mills field on surfaces. 
-*Energy asymptotics localization of a quantum particle in a Yang-Mills field. 
+<b>Dynamics or a particle in a Yang-Mills field</b>
+* Study the scattering map and the X-ray transform for a particle in a Yang-Mills field on surfaces. 
+* Energy asymptotics localization of a quantum particle in a Yang-Mills field. 
  
 <!--
 {% if author.googlescholar %}
