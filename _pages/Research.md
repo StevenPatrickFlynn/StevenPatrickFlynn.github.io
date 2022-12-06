@@ -4,17 +4,20 @@ title: "Research Topics"
 permalink: /research/
 author_profile: true
 ---
-I am generally interested in the analysis of operators on sub-riemannian manifolds (particularly those manifolds which appear as the configuration space of mechanical systems) using representation theory. Some general research dierctions include: <br/>
+I am interested in the analysis of operators on sub-riemannian manifolds (particularly those manifolds which appear as the configuration space of mechanical systems) using representation theory. Some general research dierctions include: <br/>
 
-<b>Semi-classical analysis of hypoelliptic operators:</b>
+<b>Semi-classical analysis of sub-elliptic  operators:</b>
 <br/>
-* Developing a robust symbol calculus on sub-Riemannian manifolds using representation theory. 
-* Computing quantum limits for subelliptic operators on sub-Riemannian manifolds. 
+* Develop a robust symbol calculus on sub-Riemannian manifolds using representation theory. 
+* Characterize quantum limits for subelliptic operators on sub-Riemannian manifolds. Relate their invariance properties to the underlying geodesic flow.  
 
 <b>Integral geometry and X-ray transforms on Carnot Groups:</b>
-* Proving injectivity and stability of X-ray transforms in the "flat" sub-Riemannian case"".
-* Adapding results locally to general sub-riemannian manifolds. 
+* Proving injectivity and stability of X-ray transforms on Carnot Lie groups.
 
+<b>Dynamics or a prticle in a Yang-Mills field</b>
+*Study the scattering map and the X-ray transform for a particle in a Yang-Mills field on surfaces. 
+*Energy asymptotics localization of a quantum particle in a Yang-Mills field. 
+ 
 <!--
 {% if author.googlescholar %}
   You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
