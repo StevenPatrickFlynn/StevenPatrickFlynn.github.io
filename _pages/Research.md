@@ -7,8 +7,7 @@ author_profile: true
 I am interested in the analysis of operators on sub-riemannian manifolds (particularly those manifolds which appear as the configuration space of mechanical systems) using representation theory. Some general research dierctions include: <br/>
 
 <b>Semi-classical analysis of sub-elliptic  operators:</b>
-<br/>
-* Develop a robust symbol calculus on sub-Riemannian manifolds using representation theory. 
+<br/>* Develop a robust symbol calculus on sub-Riemannian manifolds using representation theory. 
 * Characterize quantum limits for subelliptic operators on sub-Riemannian manifolds. Relate their invariance properties to the underlying geodesic flow.  
 
 
