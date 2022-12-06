@@ -16,7 +16,7 @@ I am interested in developing and applying tecniques from microlocal and semi-cl
 * Proving injectivity and stability of X-ray transforms on Carnot Lie groups.
 
 
-<b>Dynamics or a particle in a Yang-Mills field:</b>
+<b>Dynamics of a particle in a Yang-Mills field:</b>
 * Study the scattering map and the X-ray transform for a particle in a Yang-Mills field on surfaces. 
 * Localization of a quantum particle in a Yang-Mills field and its energy asymptotics. 
  
