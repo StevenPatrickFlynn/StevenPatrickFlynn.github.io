@@ -4,10 +4,11 @@ title: "Research Topics"
 permalink: /research/
 author_profile: true
 ---
-I am interested in the analysis of operators on sub-riemannian manifolds (particularly those manifolds which appear as the configuration space of mechanical systems) using representation theory. Some general research dierctions include: <br/>
+I am interested in developing and applying tecniques from microlocal and semi-classical analysis to study operators on sub-riemannian manifolds. Sub-Riemannian geometry is a vast generalization of Riemannian geometry, providing a framework for gauge theory, control theory, and quantum mechanical phenomena, among other things. Singular objects in sub-Riemannian geometry have no Riemannian counterpart, and appear to dominate spectral behavior. Representation-theoretic tecniques play a big role in my research. The main fields involved in my work are microlocal analysis, semi-classical analysis, sub-Riemannian geometry, inverse problems, representation theory.  Some general research dierctions include: <br/>
 
-<b>Semi-classical analysis of sub-elliptic  operators:</b>
-<br/>* Develop a robust symbol calculus on sub-Riemannian manifolds using representation theory. 
+<b>Microlocal and Semi-classical analysis of sub-elliptic  operators:</b>
+<br/> 
+* Develop a robust symbol calculus on sub-Riemannian manifolds using representation theory. 
 * Characterize quantum limits for subelliptic operators on sub-Riemannian manifolds. Relate their invariance properties to the underlying geodesic flow.  
 
 
@@ -17,7 +18,7 @@ I am interested in the analysis of operators on sub-riemannian manifolds (partic
 
 <b>Dynamics or a particle in a Yang-Mills field:</b>
 * Study the scattering map and the X-ray transform for a particle in a Yang-Mills field on surfaces. 
-* Energy asymptotics localization of a quantum particle in a Yang-Mills field. 
+* Localization of a quantum particle in a Yang-Mills field and its energy asymptotics. 
  
 <!--
 {% if author.googlescholar %}
