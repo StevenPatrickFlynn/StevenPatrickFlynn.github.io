@@ -11,10 +11,12 @@ I am interested in the analysis of operators on sub-riemannian manifolds (partic
 * Develop a robust symbol calculus on sub-Riemannian manifolds using representation theory. 
 * Characterize quantum limits for subelliptic operators on sub-Riemannian manifolds. Relate their invariance properties to the underlying geodesic flow.  
 
+
 <b>Integral geometry and X-ray transforms on Carnot Groups:</b>
 * Proving injectivity and stability of X-ray transforms on Carnot Lie groups.
 
-<b>Dynamics or a particle in a Yang-Mills field</b>
+
+<b>Dynamics or a particle in a Yang-Mills field:</b>
 * Study the scattering map and the X-ray transform for a particle in a Yang-Mills field on surfaces. 
 * Energy asymptotics localization of a quantum particle in a Yang-Mills field. 
  
