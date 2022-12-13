@@ -14,7 +14,7 @@ I received my Ph.D. in 2020 at the University of California, Santa Cruz under th
 
 In Fall 2019, I was a Program Assistant at the Mathematical Sciences Research Instute at  UC Berkeley in the semester program: [Micolocal Analysis](https://www.msri.org/programs/315). <br/>
 
-In  2019, I was supported  as Graduate Student Researcher on the NSF grant "[Explicit methods for linear and non-linear tomography](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1814104)" (DMS-1814104, 2018-2020, PI: François Monard).
+In  2019, I was supported as a Graduate Student Researcher on the NSF grant "[Explicit methods for linear and non-linear tomography](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1814104)" (DMS-1814104, 2018-2020, PI: François Monard).
 
 My research interests are broadly  geometric mechanics (sub-riemannian geometry), harmonic analysis on groups, and inverse problems. I am trained to use tools synthesizing microlocal analysis, differential geometry  and representation theory.  
 
