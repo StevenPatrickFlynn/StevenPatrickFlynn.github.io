@@ -19,4 +19,4 @@ In  2019, I was supported  as Graduate Student Researcher on the NSF grant "[Exp
 My research interests are broadly  geometric mechanics (sub-riemannian geometry), harmonic analysis on groups, and inverse problems. I am trained to use tools synthesizing microlocal analysis, differential geometry  and representation theory.  
 
 I am oragnizer of the [Analysis Seminar](https://bath-analysis.github.io/).
- My University of Bath webpage is [here](http://people.bath.ac.uk/spf34).
+ My University of Bath webpage is [here](http://people.bath.ac.uk/spf34). My University of Bath research portal is [here](https://researchportal.bath.ac.uk/en/persons/steven-flynn).
