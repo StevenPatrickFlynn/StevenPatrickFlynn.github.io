@@ -4,7 +4,7 @@ title: "Publications and Preprints"
 permalink: /publications/
 author_profile: true
 ---
-* <b> Singular Value Decompsotion of the X-ray Transform on the Reduced Heisenberg Group, and a Two-Radius Theorem</b> Springer, Trends in Mathematics: Research Perspectives Ghent Analysis and PDE Center (2023)(arxiv)
+* <b> Singular Value Decompsotion of the X-ray Transform on the Reduced Heisenberg Group, and a Two-Radius Theorem</b> Springer, Trends in Mathematics: Research Perspectives Ghent Analysis and PDE Center (2023)[preprint](http://arxiv.org/abs/2305.04126)
 
 * <b>Some Remarks on Semi-Classical Analysis on Two-Step Nilmanifolds</b> (with [Coltilde Fermanian-Kammerer](https://perso.math.u-pem.fr/fermanian.clotilde/) and [Veronique Fischer](https://people.bath.ac.uk/vcmf20/))   [Springer INdAM Series](https://www.springer.com/series/10283)  (2022) [preprint](https://arxiv.org/abs/2211.14273)
 
