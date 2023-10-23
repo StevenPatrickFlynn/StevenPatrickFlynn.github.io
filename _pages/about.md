@@ -7,11 +7,11 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a Postdoctoral Researcher in mathemaitcs at the Universitá di Padova funded by the STARS Project "New
+I am a Postdoctoral Researcher in mathematics at the Universitá di Padova funded by the STARS Project "New
 directions in sub-Riemannian geometry: submanifolds, curvature bounds,
-geometric hypoelliptic PDEs" under [Davide Barilari](https://www.math.unipd.it/~barilari/). I am a parcicipant of the research group in [sub-Riemannnian geometry in Padova](https://www.math.unipd.it/~barilari/SRGPD.html).  
+geometric hypoelliptic PDEs" under [Davide Barilari](https://www.math.unipd.it/~barilari/). I am a member of the research group in [sub-Riemannnian geometry in Padova](https://www.math.unipd.it/~barilari/SRGPD.html).  
      
-From January 2021 to September 2023, I  was a Postdoctoral Research Associate in mathematics and a member of the [Analysis Group](https://www.bath.ac.uk/teams/analysis-members/)  at the University of Bath. I am  supported  by the Research Project Grant (RPG-2020-037: [Quantum limits for sub-elliptic operators](https://people.bath.ac.uk/vcmf20/SubEllip.html)) which is funded by the Leverhulme Trust (PI:  [Véronique Ficher](https://people.bath.ac.uk/vcmf20/)) (Co-PI: [Clotilde Fermanian](https://perso.math.u-pem.fr/fermanian.clotilde/)).   <br/> 
+From January 2021 to September 2023, I  was a Postdoctoral Research Associate in mathematics and a member of the [Analysis Group](https://www.bath.ac.uk/teams/analysis-members/)  at the University of Bath; I was  supported  by the Research Project Grant (RPG-2020-037: [Quantum limits for sub-elliptic operators](https://people.bath.ac.uk/vcmf20/SubEllip.html)) funded by the Leverhulme Trust (PI:  [Véronique Fischer](https://people.bath.ac.uk/vcmf20/)) (Co-PI: [Clotilde Fermanian-Kammerer](https://perso.math.u-pem.fr/fermanian.clotilde/)).   <br/> 
 
 I received my Ph.D. in 2020 at the University of California, Santa Cruz under the co-supervision of [Richard Montgomery](https://people.ucsc.edu/~rmont/) and [François Monard](https://people.ucsc.edu/~fmonard/). <br/>
 
@@ -21,5 +21,5 @@ In  2019, I was supported as a Graduate Student Researcher on the NSF grant "[Ex
 
 My research interests are broadly  geometric mechanics (sub-riemannian geometry), harmonic analysis on groups, and inverse problems. I am trained to use tools synthesizing microlocal analysis, differential geometry  and representation theory.  
 
-I co-oragnize the [Bath Analysis Seminar](https://bath-analysis.github.io/).
+I co-oragnized the [Bath Analysis Seminar](https://bath-analysis.github.io/).
  My University of Bath webpage is [here](http://people.bath.ac.uk/spf34). My University of Bath research portal is [here](https://researchportal.bath.ac.uk/en/persons/steven-flynn).
