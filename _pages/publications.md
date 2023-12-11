@@ -4,7 +4,7 @@ title: "Publications and Preprints"
 permalink: /publications/
 author_profile: true
 ---
-5. <b> The sub-Riemannian X-ray Transform on H-type groups: Fourier-Slice Theorems and Injectivity Sets </b> [arxiv](https://arxiv.org/abs/2312.00594)<br/>
+5. <b> The sub-Riemannian X-ray Transform on H-type groups: Fourier-Slice Theorems and Injectivity Sets </b>(2023) <br/> [arxiv](https://arxiv.org/abs/2312.00594)<br/>
 
 4. <b> Singular Value Decompsotion of the X-ray Transform on the Reduced Heisenberg Group, and a Two-Radius Theorem</b> Springer, Trends in Mathematics: Research Perspectives Ghent Analysis and PDE Center (2023)[arxiv](http://arxiv.org/abs/2305.04126)<br/>
 
@@ -14,7 +14,7 @@ author_profile: true
 
 1. <b>Injectivity of the X-ray Transform on the Heisenberg group</b>, <i>Journal of Functional Analysis</i> (2021)<br/> [DOI](https://doi.org/10.1016/j.jfa.2020.108886)-[arxiv](https://arxiv.org/abs/2004.14348) <br/>
 
-0.  <b>Unraveling Geodesic X-ray Transforms on the Heisenberg group</b> (Ph.D. Thesis).(2020) [Link](https://escholarship.org/uc/item/2661t4n7)<br/>
+ <b>Unraveling Geodesic X-ray Transforms on the Heisenberg group</b> (Ph.D. Thesis).(2020) [Link](https://escholarship.org/uc/item/2661t4n7)<br/>
 
 <!--
 {% if author.googlescholar %}
