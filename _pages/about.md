@@ -7,7 +7,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a Postdoctoral Researcher in mathematics at the Universitá di Padova funded by the STARS Project "New
+I am a Research Fellow in mathematics at University College London. 
+
+From September 2023 to September 2024 I was a  Postdoctoral Researcher in mathematics at the Universitá di Padova funded by the STARS Project "New
 directions in sub-Riemannian geometry: submanifolds, curvature bounds,
 geometric hypoelliptic PDEs" under [Davide Barilari](https://www.math.unipd.it/~barilari/). I am a member of the research group in [sub-Riemannnian geometry in Padova](https://www.math.unipd.it/~barilari/SRGPD.html).  
      
