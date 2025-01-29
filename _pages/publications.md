@@ -1,4 +1,4 @@
---
+---
 layout: archive
 title: "Publications and Preprints"
 permalink: /publications/
