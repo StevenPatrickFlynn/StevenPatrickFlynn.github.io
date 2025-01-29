@@ -20,7 +20,7 @@ author_profile: true
 
  <b>Unraveling Geodesic X-ray Transforms on the Heisenberg group</b> (Ph.D. Thesis).(2020) [Link](https://escholarship.org/uc/item/2661t4n7)<br/>
 
-
+<!--
 {% if author.googlescholar %}
   You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
 {% endif %}
@@ -30,4 +30,5 @@ author_profile: true
 {% for post in site.publications reversed %}
   {% include archive-single.html %}
 {% endfor %}
+-->
 
