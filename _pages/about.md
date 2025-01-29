@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a Research Fellow in mathematics at University College London. 
+I am a Research Fellow in mathematics at University College London funded by  EPSRC Early Career Fellowship: EP/V001760/1 (P.I. [Jeffry Galkowski](https://www.ucl.ac.uk/~ucahalk/)). 
 
 From September 2023 to September 2024 I was a  Postdoctoral Researcher in mathematics at the Universitá di Padova funded by the STARS Project "New
 directions in sub-Riemannian geometry: submanifolds, curvature bounds,
