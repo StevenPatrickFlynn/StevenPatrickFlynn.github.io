@@ -1,9 +1,13 @@
----
+--
 layout: archive
 title: "Publications and Preprints"
 permalink: /publications/
 author_profile: true
 ---
+7. <b> Refined Strichartz Estimates for Sub-Laplacians in Heisenberg and H-type Groups </b> (2025) <br/>[arxiv](https://arxiv.org/abs/2501.04415)<br/>
+
+6. <b> A Microlocal Calculus on Filtered Manifolds </b> (2024) <br/>[arxiv](https://arxiv.org/abs/2412.17448)<br/>
+
 5. <b> The sub-Riemannian X-ray Transform on H-type groups: Fourier-Slice Theorems and Injectivity Sets </b>(2023) <br/> [arxiv](https://arxiv.org/abs/2312.00594)<br/>
 
 4. <b> Singular Value Decompsotion of the X-ray Transform on the Reduced Heisenberg Group, and a Two-Radius Theorem</b> Springer, Trends in Mathematics: Research Perspectives Ghent Analysis and PDE Center (2023)<br/> [arxiv](http://arxiv.org/abs/2305.04126)<br/>
@@ -26,4 +30,4 @@ author_profile: true
 {% for post in site.publications reversed %}
   {% include archive-single.html %}
 {% endfor %}
--->
+
