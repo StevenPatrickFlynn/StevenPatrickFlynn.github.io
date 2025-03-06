@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Steven Flynn"
 title_separator          : "-"
 name                     : &name "Steven Flynn"
-description              : &description "I am a postdoctoral reasearcher at the University of Padova"
+description              : &description "I am a postdoctoral reasearcher at University College London"
 url                      : https://StevenPatrickFlynn.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "StevenPatrickFlynn/StevenPatrickFlynn.github.io"
@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Steven Flynn"
   avatar           : "profile.png"
-  bio              : "Postdoctoral Researcher <br/> University of Padova"
-  location         : "Via Trieste, 63, <br/> 35131 Padova PD, <br/> Italy"
+  bio              : "Postdoctoral Researcher <br/> University College London"
+  location         : "25 Gordon Street, <br/> WC1H 0AY London, <br/> United Kingdom"
   employer         : 
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=pbIjkkYAAAAJ&hl=en"
-  email            :
+  email            : 
   researchgate     :  "https://www.researchgate.net/profile/Steven-Flynn"
   uri              :
   bitbucket        :
