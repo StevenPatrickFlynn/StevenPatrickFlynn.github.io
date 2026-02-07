@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Steven Flynn"
   avatar           : "profile.png"
-  bio              : "Postdoctoral Researcher <br/> University College London"
-  location         : "25 Gordon Street, <br/> WC1H 0AY London, <br/> United Kingdom"
+  bio              : "Postdoctoral Researcher, University College London"
+  location         : "London, United Kingdom"
   employer         : 
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=pbIjkkYAAAAJ&hl=en"
@@ -309,5 +309,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-theme: jekyll-theme-cayman

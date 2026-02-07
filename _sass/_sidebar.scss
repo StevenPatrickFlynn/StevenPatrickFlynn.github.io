@@ -88,7 +88,8 @@
 
     @include breakpoint($large) {
       padding: 5px;
-      border: 1px solid $border-color;
+      border: 2px solid $border-color;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
   }
 }
@@ -117,12 +118,15 @@
   }
 }
 .sidebar .author__name {
-  font-family: $sans-serif;
-  font-size: $type-size-5;
+  font-family: $header-font-family;
+  font-size: $type-size-4;
+  color: $primary-color;
 }
 
 .author__bio {
   margin: 0;
+  color: $muted-text-color;
+  font-family: $sans-serif;
 
   @include breakpoint($large) {
     margin-top: 10px;

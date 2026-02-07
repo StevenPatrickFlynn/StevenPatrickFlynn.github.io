@@ -37,6 +37,7 @@
 .page__title {
   margin-top: 0;
   line-height: 1;
+  color: $primary-color;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -53,6 +54,7 @@
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
+    color: $primary-color;
   }
 
   p, li, dl {
@@ -73,10 +75,15 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid rgba($link-color, 0.3);
+    -webkit-transition: $global-transition;
+    transition: $global-transition;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      border-bottom-color: $link-color-hover;
+      color: $link-color-hover;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);

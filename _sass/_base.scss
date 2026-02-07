@@ -13,7 +13,7 @@ body {
   padding-bottom: 9em;
   color: $text-color;
   font-family: $global-font-family;
-  line-height: 1.5;
+  line-height: 1.7;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -25,20 +25,21 @@ h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em;
   line-height: 1.2;
   font-family: $header-font-family;
-  font-weight: bold;
+  font-weight: 600;
+  color: $primary-color;
 }
 
 h1 {
   margin-top: 0;
-  font-size: $type-size-3;
+  font-size: $type-size-2;
 }
 
 h2 {
-  font-size: $type-size-4;
+  font-size: $type-size-3;
 }
 
 h3 {
-  font-size: $type-size-5;
+  font-size: $type-size-4;
 }
 
 h4 {
@@ -58,7 +59,7 @@ small, .small {
 }
 
 p {
-  margin-bottom: 1.3em;
+  margin-bottom: 1.5em;
 }
 
 u,
@@ -97,7 +98,7 @@ blockquote {
   padding-left: 1em;
   padding-right: 1em;
   font-style: italic;
-  border-left: 0.25em solid $primary-color;
+  border-left: 3px solid $accent-gold;
 
   cite {
     font-style: italic;
