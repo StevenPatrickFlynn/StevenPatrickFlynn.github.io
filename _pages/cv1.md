@@ -13,7 +13,7 @@ redirect_from:
 
 <div class="cv-section">
   <h2>Research Interests</h2>
-  <p>Hypoelliptic PDEs. Microlocal Analysis. Geometric Inverse Problems. Sub-Riemannian Geometry.</p>
+  <p>Hypoelliptic and Dispersive PDEs. Analysis on Lie Groups. Microlocal Analysis. Geometric Inverse Problems. Sub-Riemannian Geometry.</p>
 </div>
 
 <div class="cv-section">
@@ -58,7 +58,7 @@ redirect_from:
   <h2>Research Papers</h2>
   <ol class="cv-publications" reversed>
     <li>Davide Barilari and Steven Flynn. <em>Refined Strichartz estimates for sub-Laplacians in Heisenberg and H-type groups.</em> <a href="https://arxiv.org/abs/2501.04415">arXiv:2501.04415</a>, 2025.</li>
-    <li>Clotilde Fermanian-Kammerer, V&eacute;ronique Fischer, and Steven Flynn. <em>A microlocal calculus on filtered manifolds.</em> <a href="https://arxiv.org/abs/2412.17448">arXiv:2412.17448</a>, 2024. Recommended for acceptance in <em>Memoirs of the European Mathematical Society.</em></li>
+    <li>Clotilde Fermanian-Kammerer, V&eacute;ronique Fischer, and Steven Flynn. <em>Quantization on filtered manifolds.</em> <a href="https://arxiv.org/abs/2412.17448">arXiv:2412.17448</a>, 2024. To appear in <em>Memoirs of the European Mathematical Society.</em></li>
     <li>Steven Flynn. <em>The sub-Riemannian X-ray Transform on H-type Groups; Fourier Slice Theorems and Injectivity Sets.</em> <a href="https://arxiv.org/abs/2312.00594">arXiv:2312.00594</a>, 2023.</li>
     <li>Clotilde Fermanian-Kammerer, V&eacute;ronique Fischer, and Steven Flynn. <em>Geometric invariance of the semi-classical calculus on nilpotent graded Lie groups.</em> <a href="https://rdcu.be/c4LAP">Journal of Geometric Analysis</a>, 2023.</li>
     <li>Steven Flynn. <em>Singular Value Decomposition of the X-ray Transform on the Reduced Heisenberg group, and a Two-Radius Theorem.</em> <a href="https://link.springer.com/book/10.1007/978-3-031-48579-4">Springer, Trends in Mathematics: Ghent Analysis and PDE Center</a>, 2023.</li>
@@ -69,16 +69,6 @@ redirect_from:
 
 <div class="cv-section">
   <h2>Selected Talks</h2>
-
-  <h3>Upcoming</h3>
-  <div class="cv-entry">
-    <span class="cv-date">Dec 2025</span>
-    <span class="cv-detail">Geometric Structures Seminar, SISSA</span>
-  </div>
-  <div class="cv-entry">
-    <span class="cv-date">Dec 2025</span>
-    <span class="cv-detail">HADES Seminar, UC Berkeley</span>
-  </div>
 
   <h3>Strichartz Estimates on H-type Groups</h3>
   <div class="cv-entry">
@@ -95,6 +85,14 @@ redirect_from:
   </div>
 
   <h3>A Microlocal Calculus on Filtered Manifolds</h3>
+  <div class="cv-entry">
+    <span class="cv-date">Dec 2025</span>
+    <span class="cv-detail">HADES Seminar, UC Berkeley</span>
+  </div>
+  <div class="cv-entry">
+    <span class="cv-date">Dec 2025</span>
+    <span class="cv-detail">Geometric Structures Seminar, SISSA</span>
+  </div>
   <div class="cv-entry">
     <span class="cv-date">Jan 2025</span>
     <span class="cv-detail">University College London</span>
@@ -178,6 +176,10 @@ redirect_from:
 <div class="cv-section">
   <h2>Service</h2>
   <div class="cv-entry">
+    <span class="cv-date">2022 &ndash; 2023</span>
+    <span class="cv-detail">Reviewer, <em>Journal of Functional Analysis</em></span>
+  </div>
+  <div class="cv-entry">
     <span class="cv-date">2022</span>
     <span class="cv-detail">Organizer, Bath Analysis Seminar</span>
   </div>
@@ -220,8 +222,22 @@ redirect_from:
 
   <h3>University College London</h3>
   <div class="cv-entry">
-    <span class="cv-date">Fall 2025</span>
-    <span class="cv-detail">Math 0071: Spectral Theory</span>
+    <span class="cv-date">Autumn 2026</span>
+    <span class="cv-detail">Analysis of the Sub-Laplacian, Taught Course Centre</span>
+  </div>
+  <div class="cv-entry">
+    <span class="cv-date">Autumn 2025</span>
+    <span class="cv-detail">MATH0071: Spectral Theory</span>
+  </div>
+
+  <h3>Supervision</h3>
+  <div class="cv-entry">
+    <span class="cv-date">2026 &ndash; 27</span>
+    <span class="cv-detail">MSci fourth-year project, UCL</span>
+  </div>
+  <div class="cv-entry">
+    <span class="cv-date">From Aug 2026</span>
+    <span class="cv-detail">Undergraduate summer research project, UCL</span>
   </div>
 
   <h3>University of California, Santa Cruz</h3>
@@ -243,5 +259,5 @@ redirect_from:
   </div>
 
   <h3>Graduate Teaching Assistant</h3>
-  <p>2014&ndash;2020: Calculus sequence (Math 11A, 19A/B, 23A/B), Linear Algebra (Math 21), Real Analysis (Math 105A/B), Introduction to Proofs (Math 100), Programming for Mathematics (Python, Math 152), Precalculus (Math 3), College Algebra (Math 2), and Introduction to Physics (Physics 5/5L).</p>
+  <p>2014&ndash;2020: Calculus sequence (Math 11A, 19A/B, 23A/B), Linear Algebra (Math 21), Real Analysis (Math 105A/B), Introduction to Proofs (Math 100), Programming for Mathematics (Python, Math 152), Precalculus (Math 3), College Algebra (Math 2), and Introductory Physics Laboratory (Physics 6/6L).</p>
 </div>
