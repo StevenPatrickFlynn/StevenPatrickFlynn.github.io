@@ -15,10 +15,10 @@ author_profile: true
 </div>
 
 <div class="publication-item">
-  <div class="pub-title">A Microlocal Calculus on Filtered Manifolds</div>
+  <div class="pub-title">Quantization on Filtered Manifolds</div>
   <div class="pub-year">2024</div>
   <div class="pub-authors">with <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://people.bath.ac.uk/vcmf20/">Veronique Fischer</a></div>
-  <div class="pub-venue">Recommended for acceptance in <em>Memoirs of the European Mathematical Society</em></div>
+  <div class="pub-venue">To appear in <em>Memoirs of the European Mathematical Society</em></div>
   <div class="pub-links">
     <a href="https://arxiv.org/abs/2412.17448">arXiv</a>
   </div>
