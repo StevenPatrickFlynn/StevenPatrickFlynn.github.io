@@ -3,6 +3,7 @@ layout: archive
 title: "Curriculum Vitae"
 permalink: /cv/
 author_profile: true
+redirect_to: /files/CVStevenFlynn.pdf
 redirect_from:
   - /resume
 ---
