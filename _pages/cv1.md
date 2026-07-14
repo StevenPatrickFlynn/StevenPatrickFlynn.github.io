@@ -56,14 +56,24 @@ redirect_from:
 
 <div class="cv-section">
   <h2>Research Papers</h2>
-  <ol class="cv-publications" reversed>
-    <li>Davide Barilari and Steven Flynn. <em>Refined Strichartz estimates for sub-Laplacians in Heisenberg and H-type groups.</em> <a href="https://arxiv.org/abs/2501.04415">arXiv:2501.04415</a>, 2025.</li>
+
+  <h3>Journal Articles</h3>
+  <ol class="cv-publications">
     <li>Clotilde Fermanian-Kammerer, V&eacute;ronique Fischer, and Steven Flynn. <em>Quantization on filtered manifolds.</em> <a href="https://arxiv.org/abs/2412.17448">arXiv:2412.17448</a>, 2024. To appear in <em>Memoirs of the European Mathematical Society.</em></li>
-    <li>Steven Flynn. <em>The sub-Riemannian X-ray Transform on H-type Groups; Fourier Slice Theorems and Injectivity Sets.</em> <a href="https://arxiv.org/abs/2312.00594">arXiv:2312.00594</a>, 2023.</li>
     <li>Clotilde Fermanian-Kammerer, V&eacute;ronique Fischer, and Steven Flynn. <em>Geometric invariance of the semi-classical calculus on nilpotent graded Lie groups.</em> <a href="https://rdcu.be/c4LAP">Journal of Geometric Analysis</a>, 2023.</li>
-    <li>Steven Flynn. <em>Singular Value Decomposition of the X-ray Transform on the Reduced Heisenberg group, and a Two-Radius Theorem.</em> <a href="https://link.springer.com/book/10.1007/978-3-031-48579-4">Springer, Trends in Mathematics: Ghent Analysis and PDE Center</a>, 2023.</li>
-    <li>Clotilde Fermanian-Kammerer, V&eacute;ronique Fischer, and Steven Flynn. <em>Some Remarks on Semi-Classical Analysis on Two-Step Nilmanifolds.</em> <a href="https://www.springer.com/series/10283">Springer INdAM Series</a>, 2022.</li>
     <li>Steven Flynn. <em>Injectivity of the Heisenberg X-ray transform.</em> <a href="https://doi.org/10.1016/j.jfa.2020.108886">Journal of Functional Analysis</a>, 280.5 (2021): 108886.</li>
+  </ol>
+
+  <h3>Refereed Proceedings and Volumes</h3>
+  <ol class="cv-publications" start="4">
+    <li>Steven Flynn. <em>Singular Value Decomposition of the X-ray Transform on the Reduced Heisenberg group, and a Two-Radius Theorem.</em> <a href="https://link.springer.com/book/10.1007/978-3-031-48579-4">Springer, Trends in Mathematics: Ghent Analysis and PDE Center</a>, 2023.</li>
+    <li>Clotilde Fermanian-Kammerer, V&eacute;ronique Fischer, and Steven Flynn. <em>Some Remarks on Semi-Classical Analysis on Two-Step Nilmanifolds.</em> <a href="https://www.springer.com/series/10283">Springer INdAM Series</a>, 2023.</li>
+  </ol>
+
+  <h3>Preprints</h3>
+  <ol class="cv-publications" start="6">
+    <li>Davide Barilari and Steven Flynn. <em>Refined Strichartz estimates for sub-Laplacians in Heisenberg and H-type groups.</em> <a href="https://arxiv.org/abs/2501.04415">arXiv:2501.04415</a>, 2025.</li>
+    <li>Steven Flynn. <em>The sub-Riemannian X-ray Transform on H-type Groups: Fourier Slice Theorems and Injectivity Sets.</em> <a href="https://arxiv.org/abs/2312.00594">arXiv:2312.00594</a>, 2023.</li>
   </ol>
 </div>
 
