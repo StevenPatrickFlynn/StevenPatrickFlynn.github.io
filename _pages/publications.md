@@ -52,7 +52,7 @@ author_profile: true
 
 <div class="publication-item">
   <div class="pub-title">Some Remarks on Semi-Classical Analysis on Two-Step Nilmanifolds</div>
-  <div class="pub-year">2022</div>
+  <div class="pub-year">2023</div>
   <div class="pub-authors">with <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://people.bath.ac.uk/vcmf20/">Veronique Fischer</a></div>
   <div class="pub-venue">Springer INdAM Series: <em>Quantum Mechanics I</em></div>
   <div class="pub-links">
