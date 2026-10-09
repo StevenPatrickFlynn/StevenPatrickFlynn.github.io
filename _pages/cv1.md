@@ -244,11 +244,11 @@ redirect_from:
   <h3>Supervision</h3>
   <div class="cv-entry">
     <span class="cv-date">2026 &ndash; 27</span>
-    <span class="cv-detail">MSci fourth-year project, UCL</span>
+    <span class="cv-detail">MSci project: degenerate diffusions and hypoellipticity, UCL</span>
   </div>
   <div class="cv-entry">
-    <span class="cv-date">From Aug 2026</span>
-    <span class="cv-detail">Undergraduate summer research project, UCL</span>
+    <span class="cv-date">Aug &ndash; Oct 2026</span>
+    <span class="cv-detail">Summer research project: equidistribution and ergodic theorems, UCL</span>
   </div>
 
   <h3>University of California, Santa Cruz</h3>
