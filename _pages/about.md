@@ -9,8 +9,7 @@ redirect_from:
 ---
 I am a Research Fellow in mathematics at University College London funded by EPSRC Early Career Fellowship: EP/V001760/1 (P.I. [Jeffry Galkowski](https://www.ucl.ac.uk/~ucahalk/)).
 
-<img src="/images/quasimode-banner.png" alt="Nested quasimode with high pointwise localisation" style="width:100%;border-radius:8px;margin:1em 0 0.25em 0">
-*Nested quasimode with high pointwise localisation*
+<img src="/images/quasimode-banner.png" alt="Nested quasimode with high pointwise localisation" style="width:100%;margin:1em 0">
 
 From September 2023 to September 2024 I was a Postdoctoral Researcher in mathematics at the Universita di Padova funded by the STARS Project "New directions in sub-Riemannian geometry: submanifolds, curvature bounds, geometric hypoelliptic PDEs" under [Davide Barilari](https://www.math.unipd.it/~barilari/). I am a member of the research group in [sub-Riemannian geometry in Padova](https://www.math.unipd.it/~barilari/SRGPD.html).
 
