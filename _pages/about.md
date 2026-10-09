@@ -23,5 +23,5 @@ My research interests are broadly geometric mechanics (sub-Riemannian geometry),
 
 I co-organized the [Bath Analysis Seminar](https://bath-analysis.github.io/).
 
-<img src="/images/quasimode-banner.png" alt="Quasimode concentrating on a figure-eight curve" style="width:100%;border-radius:8px;margin-top:1.5em">
-*A quasimode concentrating on a figure-eight: the construction behind my current work on the local density of states.*
+<img src="/images/quasimode-banner.png" alt="Nested quasimodes concentrating on a sequence of figure-eight curves crossing at one point" style="width:100%;border-radius:8px;margin-top:1.5em">
+*Nested quasimodes concentrating on a sequence of figure-eights, all crossing at one point: the construction behind my current work on the local density of states.*
