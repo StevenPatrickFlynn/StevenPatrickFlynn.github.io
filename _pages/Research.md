@@ -18,7 +18,7 @@ I develop sharp estimates and microlocal tools for sub-elliptic operators: opera
 <div class="research-area">
   <h3>Microlocal Analysis on Filtered Manifolds</h3>
   <ul>
-    <li>With <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://people.bath.ac.uk/vcmf20/">V&eacute;ronique Fischer</a>, I constructed a pseudodifferential calculus on filtered manifolds, quantizing operator-valued symbols in local adapted frames (<a href="https://arxiv.org/abs/2412.17448">arXiv:2412.17448</a>, accepted at <em>Memoirs of the European Mathematical Society</em>). The calculus admits parametrices for H&ouml;rmander sums of squares.</li>
+    <li>With <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://www.veroniquefischer.com">V&eacute;ronique Fischer</a>, I constructed a pseudodifferential calculus on filtered manifolds, quantizing operator-valued symbols in local adapted frames (<a href="https://arxiv.org/abs/2412.17448">arXiv:2412.17448</a>, accepted at <em>Memoirs of the European Mathematical Society</em>). The calculus admits parametrices for H&ouml;rmander sums of squares.</li>
     <li>Quantum limits of sub-elliptic Schr&ouml;dinger equations: Egorov-type theorems and semiclassical measures on step-2 nilmanifolds, and the correct notion of classical flow on a filtered manifold.</li>
   </ul>
 </div>

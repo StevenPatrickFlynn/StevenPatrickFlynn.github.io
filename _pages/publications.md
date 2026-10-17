@@ -10,7 +10,7 @@ author_profile: true
 <div class="publication-item">
   <div class="pub-title">Quantization on Filtered Manifolds</div>
   <div class="pub-year">2024</div>
-  <div class="pub-authors">with <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://people.bath.ac.uk/vcmf20/">Veronique Fischer</a></div>
+  <div class="pub-authors">with <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://www.veroniquefischer.com">Veronique Fischer</a></div>
   <div class="pub-venue">To appear in <em>Memoirs of the European Mathematical Society</em></div>
   <div class="pub-links">
     <a href="https://arxiv.org/abs/2412.17448">arXiv</a>
@@ -20,7 +20,7 @@ author_profile: true
 <div class="publication-item">
   <div class="pub-title">Geometric Invariance of the Semi-Classical Calculus on Nilpotent Graded Lie Groups</div>
   <div class="pub-year">2023</div>
-  <div class="pub-authors">with <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://people.bath.ac.uk/vcmf20/">Veronique Fischer</a></div>
+  <div class="pub-authors">with <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://www.veroniquefischer.com">Veronique Fischer</a></div>
   <div class="pub-venue"><em>Journal of Geometric Analysis</em></div>
   <div class="pub-links">
     <a href="https://arxiv.org/abs/2112.11509">arXiv</a>
@@ -53,7 +53,7 @@ author_profile: true
 <div class="publication-item">
   <div class="pub-title">Some Remarks on Semi-Classical Analysis on Two-Step Nilmanifolds</div>
   <div class="pub-year">2023</div>
-  <div class="pub-authors">with <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://people.bath.ac.uk/vcmf20/">Veronique Fischer</a></div>
+  <div class="pub-authors">with <a href="https://perso.math.u-pem.fr/fermanian.clotilde/">Clotilde Fermanian-Kammerer</a> and <a href="https://www.veroniquefischer.com">Veronique Fischer</a></div>
   <div class="pub-venue">Springer INdAM Series: <em>Quantum Mechanics I</em></div>
   <div class="pub-links">
     <a href="https://arxiv.org/abs/2211.14273">arXiv</a>
