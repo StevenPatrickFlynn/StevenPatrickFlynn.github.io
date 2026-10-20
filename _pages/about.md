@@ -9,6 +9,8 @@ redirect_from:
 ---
 I am a Research Fellow in mathematics at University College London funded by EPSRC Early Career Fellowship: EP/V001760/1 (P.I. [Jeffrey Galkowski](https://www.homepages.ucl.ac.uk/~ucahalk/)).
 
+I work in microlocal analysis and spectral theory, currently on quasimodes and eigenfunction concentration, and more broadly on geometric mechanics (sub-Riemannian geometry), harmonic analysis on groups, and inverse problems.
+
 <img src="/images/quasimode-banner.png" alt="Nested quasimode with high pointwise localisation" style="width:100%;margin:1em 0">
 
 From September 2023 to September 2024 I was a Postdoctoral Researcher in mathematics at the Universita di Padova funded by the STARS Project "New directions in sub-Riemannian geometry: submanifolds, curvature bounds, geometric hypoelliptic PDEs" under [Davide Barilari](https://www.math.unipd.it/~barilari/). I am a member of the research group in [sub-Riemannian geometry in Padova](https://www.math.unipd.it/~barilari/SRGPD.html).
@@ -20,7 +22,5 @@ I received my Ph.D. in 2020 at the University of California, Santa Cruz under th
 In Fall 2019, I was a Program Assistant at the Mathematical Sciences Research Institute at UC Berkeley in the semester program: [Microlocal Analysis](https://www.msri.org/programs/315).
 
 In 2019, I was supported as a Graduate Student Researcher on the NSF grant "[Explicit methods for linear and non-linear tomography](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1814104)" (DMS-1814104, 2018-2020, PI: Francois Monard).
-
-My research interests are broadly geometric mechanics (sub-Riemannian geometry), harmonic analysis on groups, and inverse problems. I am trained to use tools synthesizing microlocal analysis, differential geometry and representation theory.
 
 I co-organized the [Bath Analysis Seminar](https://bath-analysis.github.io/).
