@@ -48,20 +48,427 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Page title accent */
-.page__title {
-  border-bottom: 3px solid $accent-gold;
-  display: inline-block;
-  padding-bottom: 0.15em;
+/* Masthead */
+.masthead {
+  border-top: 4px solid $accent-gold;
+  border-bottom: 1px solid $border-color;
+  background-color: rgba($background-color, 0.96);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  &__inner-wrap {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 }
 
-/* Publication card styles */
+.masthead__menu-item--lg a {
+  font-family: $display-serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.greedy-nav .visible-links .masthead__menu-item:not(.masthead__menu-item--lg) a {
+  position: relative;
+  font-family: $sans-serif;
+  font-size: 0.95em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.25rem;
+    height: 2px;
+    background: $accent-gold;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover:after,
+  &.active:after {
+    transform: scaleX(1);
+  }
+
+  &.active {
+    color: $primary-color;
+  }
+}
+
+/* Page title accent */
+.page__title {
+  position: relative;
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+  letter-spacing: -0.01em;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    margin-top: 0.45em;
+    background: $accent-gold;
+    border-radius: 2px;
+  }
+}
+
+.page__lead {
+  font-size: 1.12em;
+  line-height: 1.65;
+  color: $muted-text-color;
+  margin-bottom: 2em;
+}
+
+/* Sidebar polish */
+.sidebar .author__avatar img {
+  @include breakpoint($large) {
+    border-color: rgba($accent-gold, 0.6);
+    box-shadow: 0 4px 16px rgba($primary-color, 0.10);
+  }
+}
+
+.author__urls li {
+  font-family: $sans-serif;
+  font-size: 0.88em;
+}
+
+/* Home page */
+.home-lead {
+  font-family: $sans-serif;
+  font-size: $type-size-5;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $muted-text-color;
+  margin-top: -0.5em;
+  margin-bottom: 0.9em;
+}
+
+.home-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-bottom: 1.8em;
+
+  span {
+    display: inline-block;
+    padding: 0.2em 0.75em;
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: $primary-color;
+    background: rgba($accent-sage, 0.16);
+    border: 1px solid rgba($accent-sage, 0.5);
+    border-radius: 999px;
+  }
+}
+
+.home-banner {
+  margin: 2em 0 2em;
+  padding: 0;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  background: $background-color;
+  box-shadow: 0 10px 30px rgba($primary-color, 0.08);
+
+  img {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.home-areas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9em;
+  margin: 0 0 2.5em;
+
+  @include breakpoint(max-width $small) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-area {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75em;
+  padding: 0.9em 1.1em;
+  background: #fff;
+  border: 1px solid $border-color;
+  border-left: 3px solid $accent-gold;
+  border-radius: 6px;
+  text-decoration: none;
+  color: $primary-color;
+  transition: $global-transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba($primary-color, 0.10);
+    border-left-color: $accent-sage;
+    color: $primary-color;
+  }
+
+  &__num {
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: $accent-gold;
+  }
+
+  &__title {
+    font-family: $display-serif;
+    font-size: 1.02em;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+}
+
+.page__content h2.home-section {
+  font-size: $type-size-4;
+  letter-spacing: 0.02em;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 0;
+
+  &__entry {
+    display: grid;
+    grid-template-columns: 10.5em 1fr;
+    gap: 1.25em;
+    position: relative;
+    padding: 0 0 1.4em 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 9.5em;
+      top: 0.55em;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: $accent-gold;
+      box-shadow: 0 0 0 3px $background-color;
+      z-index: 1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: calc(9.5em + 4px);
+      top: 0.9em;
+      bottom: -0.3em;
+      width: 1px;
+      background: $border-color;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__date {
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $muted-text-color;
+    padding-top: 0.35em;
+    padding-right: 2em;
+    text-align: right;
+  }
+
+  &__body {
+    line-height: 1.6;
+
+    strong {
+      color: $primary-color;
+    }
+  }
+
+  @include breakpoint(max-width $small) {
+    &__entry {
+      grid-template-columns: 1fr;
+      gap: 0.2em;
+      padding-left: 1.4em;
+
+      &:before {
+        left: 0;
+        top: 0.45em;
+      }
+
+      &:after {
+        left: 4px;
+        top: 0.8em;
+      }
+    }
+
+    &__date {
+      text-align: left;
+      padding: 0;
+    }
+  }
+}
+
+/* Research page */
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25em;
+  margin-bottom: 2em;
+}
+
+.research-area {
+  position: relative;
+  padding: 1.4em 1.6em 1.1em;
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba($primary-color, 0.04);
+  transition: $global-transition;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.2em;
+    bottom: 1.2em;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: $accent-gold;
+  }
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba($primary-color, 0.09);
+  }
+
+  &:target {
+    border-color: rgba($accent-sage, 0.9);
+    box-shadow: 0 0 0 3px rgba($accent-sage, 0.25);
+  }
+
+  .ra-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8em;
+    margin-bottom: 0.7em;
+  }
+
+  .ra-number {
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: $accent-gold;
+  }
+
+  h3 {
+    font-family: $display-serif;
+    color: $primary-color;
+    font-size: 1.2em;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .ra-item {
+    margin: 0 0 0.85em;
+    line-height: 1.65;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ra-label {
+    display: inline-block;
+    margin-right: 0.45em;
+    padding: 0.05em 0.6em;
+    vertical-align: 0.1em;
+    font-family: $sans-serif;
+    font-size: $type-size-7;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    white-space: nowrap;
+
+    &--paper {
+      color: $primary-color;
+      background: rgba($primary-color, 0.08);
+    }
+
+    &--wip {
+      color: darken($accent-gold, 22%);
+      background: rgba($accent-gold, 0.18);
+    }
+  }
+}
+
+.research-note {
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  letter-spacing: 0.02em;
+  color: $muted-text-color;
+  margin: 0;
+}
+
+/* Publications */
+.archive h2 {
+  font-size: $type-size-4;
+  letter-spacing: 0.02em;
+  margin-top: 2.2em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid $border-color;
+
+  &:first-of-type {
+    margin-top: 1em;
+  }
+}
+
 .publication-item {
-  padding: 1.5em 0;
+  display: grid;
+  grid-template-columns: 5.5em 1fr;
+  column-gap: 1.25em;
+  padding: 1.3em 0;
   border-bottom: 1px solid $border-color;
 
   &:last-child {
     border-bottom: none;
+  }
+
+  > * {
+    grid-column: 2;
+  }
+
+  .pub-year {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+    margin: 0;
+    padding-top: 0.25em;
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $muted-text-color;
   }
 
   .pub-title {
@@ -71,16 +478,6 @@ html {
     color: $primary-color;
     margin-bottom: 0.3em;
     line-height: 1.3;
-  }
-
-  .pub-year {
-    font-family: $sans-serif;
-    font-size: $type-size-6;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: $muted-text-color;
-    margin-bottom: 0.4em;
   }
 
   .pub-authors {
@@ -107,19 +504,21 @@ html {
   }
 
   .pub-links {
-    margin-top: 0.5em;
+    margin-top: 0.4em;
 
     a {
       display: inline-block;
-      padding: 0.25em 0.75em;
-      margin-right: 0.5em;
+      padding: 0.25em 0.8em;
+      margin-right: 0.4em;
       margin-bottom: 0.3em;
       font-family: $sans-serif;
       font-size: $type-size-6;
       font-weight: 600;
+      letter-spacing: 0.03em;
       color: $primary-color;
+      background: #fff;
       border: 1px solid $border-color;
-      border-radius: 3px;
+      border-radius: 999px;
       text-decoration: none;
       -webkit-transition: $global-transition;
       transition: $global-transition;
@@ -129,6 +528,20 @@ html {
         color: #fff;
         border-color: $primary-color;
       }
+    }
+  }
+
+  @include breakpoint(max-width $small) {
+    grid-template-columns: 1fr;
+
+    > * {
+      grid-column: 1;
+    }
+
+    .pub-year {
+      grid-row: auto;
+      padding-top: 0;
+      margin-bottom: 0.3em;
     }
   }
 }
@@ -225,28 +638,17 @@ html {
   }
 }
 
-/* Research area styles */
-.research-area {
-  padding: 1.25em 0;
-  border-bottom: 1px solid $border-color;
-
-  &:last-child {
-    border-bottom: none;
+/* Footer */
+.page__footer {
+  footer {
+    padding-top: 0.5em;
   }
 
-  h3 {
-    font-family: $display-serif;
-    color: $primary-color;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-  }
-
-  ul {
-    margin-top: 0.5em;
-
-    li {
-      margin-bottom: 0.6em;
-      line-height: 1.6;
-    }
+  > footer > a {
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 }
