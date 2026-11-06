@@ -64,19 +64,19 @@ author_profile: true
 <h2>Preprints</h2>
 
 <div class="publication-item">
+  <div class="pub-title">Injectivity and Stability for the sub-Riemannian X-ray Transform on H-type Groups</div>
+  <div class="pub-year">2026</div>
+  <div class="pub-links">
+    <a href="https://arxiv.org/abs/2312.00594">arXiv</a>
+  </div>
+</div>
+
+<div class="publication-item">
   <div class="pub-title">Refined Strichartz Estimates for Sub-Laplacians in Heisenberg and H-type Groups</div>
   <div class="pub-year">2025</div>
   <div class="pub-authors">with <a href="https://www.math.unipd.it/~barilari/">Davide Barilari</a></div>
   <div class="pub-links">
     <a href="https://arxiv.org/abs/2501.04415">arXiv</a>
-  </div>
-</div>
-
-<div class="publication-item">
-  <div class="pub-title">The sub-Riemannian X-ray Transform on H-type Groups: Fourier-Slice Theorems and Injectivity Sets</div>
-  <div class="pub-year">2023</div>
-  <div class="pub-links">
-    <a href="https://arxiv.org/abs/2312.00594">arXiv</a>
   </div>
 </div>
 

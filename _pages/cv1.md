@@ -74,7 +74,7 @@ redirect_from:
   <h3>Preprints</h3>
   <ol class="cv-publications" start="6">
     <li>Davide Barilari and Steven Flynn. <em>Refined Strichartz estimates for sub-Laplacians in Heisenberg and H-type groups.</em> <a href="https://arxiv.org/abs/2501.04415">arXiv:2501.04415</a>, 2025.</li>
-    <li>Steven Flynn. <em>The sub-Riemannian X-ray Transform on H-type Groups: Fourier Slice Theorems and Injectivity Sets.</em> <a href="https://arxiv.org/abs/2312.00594">arXiv:2312.00594</a>, 2023.</li>
+    <li>Steven Flynn. <em>Injectivity and Stability for the sub-Riemannian X-ray Transform on H-type Groups.</em> <a href="https://arxiv.org/abs/2312.00594">arXiv:2312.00594</a>, 2026.</li>
   </ol>
 </div>
 
