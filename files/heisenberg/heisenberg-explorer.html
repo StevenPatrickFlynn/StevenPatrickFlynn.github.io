@@ -1,0 +1,590 @@
+<title>Heisenberg Sphere Explorer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one working stage (3D view beside a control rail), course formulas underneath. */
+:root {
+  --bg: #f2f4f8; --surface: #ffffff; --stage: #fafbfd; --ink: #17202b; --muted: #586477;
+  --line: #d5dbe5; --grid: #e2e7ef; --accent: #2a63c9; --tint: #e8eefb;
+  --sphere: #2f6fdb; --geo: #c9731a; --cut: #9ba5b4; --helix: #bf2c66; --conj: #11897a;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c111a; --surface: #131a26; --stage: #0f1520; --ink: #e4e9f1; --muted: #97a2b4;
+    --line: #263044; --grid: #1b2332; --accent: #7aa5ff; --tint: #18233a;
+    --sphere: #6e9cff; --geo: #f0a04b; --cut: #5a6577; --helix: #ff6a9f; --conj: #3ad1b6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c111a; --surface: #131a26; --stage: #0f1520; --ink: #e4e9f1; --muted: #97a2b4;
+  --line: #263044; --grid: #1b2332; --accent: #7aa5ff; --tint: #18233a;
+  --sphere: #6e9cff; --geo: #f0a04b; --cut: #5a6577; --helix: #ff6a9f; --conj: #3ad1b6;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+.wrap {
+  max-width: 1320px; margin: 0 auto; display: grid; gap: 22px;
+  padding-block: 22px 44px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.top { display: grid; gap: 6px; max-width: 72ch; }
+.eyebrow { margin: 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0; font-size: clamp(26px, 3.4vw, 34px); font-weight: 600; letter-spacing: -.015em; line-height: 1.15; text-wrap: balance; }
+.lede { margin: 0; color: var(--muted); }
+
+.app { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 16px; align-items: start; }
+@media (max-width: 880px) { .app { grid-template-columns: minmax(0, 1fr); } }
+
+.stage {
+  position: relative; height: clamp(380px, 74vh, 780px); min-width: 0;
+  background: var(--stage); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+}
+.stage canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+.stage canvas:active { cursor: grabbing; }
+.labels { position: absolute; inset: 0; pointer-events: none; }
+.labels span {
+  position: absolute; left: 0; top: 0; font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+  transform: translate(-50%, -50%); white-space: nowrap;
+}
+.labels span.p { color: var(--ink); font-weight: 500; }
+.hint, .scale-note {
+  position: absolute; margin: 0; font-family: var(--font-mono); font-size: 11.5px; color: var(--muted);
+  background: color-mix(in srgb, var(--stage) 82%, transparent); padding: 3px 7px; border-radius: 5px; pointer-events: none;
+}
+.hint { top: 10px; right: 10px; }
+.scale-note { top: 10px; left: 10px; }
+.legend {
+  position: absolute; left: 10px; bottom: 10px; margin: 0; padding: 8px 10px; list-style: none;
+  display: grid; gap: 3px; font-size: 12.5px; pointer-events: none;
+  background: color-mix(in srgb, var(--stage) 86%, transparent); border: 1px solid var(--line); border-radius: 7px;
+}
+.legend li { display: flex; align-items: center; gap: 8px; }
+.sw { width: 18px; height: 4px; border-radius: 2px; flex: none; }
+.sw.dot { width: 9px; height: 9px; border-radius: 50%; margin: 0 4.5px; }
+.sw.dash { height: 0; border-top: 2px dashed var(--muted); border-radius: 0; }
+.nogl { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 24px; text-align: center; color: var(--muted); }
+
+.panel { display: grid; gap: 12px; min-width: 0; }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px 14px; display: grid; gap: 10px; min-width: 0; }
+.box h2 { margin: 0; font-size: 12px; font-family: var(--font-mono); font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.presets { display: flex; flex-wrap: wrap; gap: 6px; }
+.presets button {
+  font: inherit; font-size: 13px; padding: 5px 10px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+}
+.presets button:hover { border-color: var(--accent); }
+.presets button[aria-pressed="true"] { background: var(--tint); border-color: var(--accent); color: var(--ink); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.toggle { display: flex; align-items: center; gap: 9px; font-size: 14px; cursor: pointer; }
+.toggle input { width: 16px; height: 16px; margin: 0; accent-color: var(--accent); }
+.slider { display: grid; gap: 2px; }
+.slider .lab { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; }
+.slider output { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 13px; color: var(--ink); }
+.slider input { width: 100%; margin: 0; accent-color: var(--accent); }
+.xy { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+.readout { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin: 0; font-size: 13px; }
+.readout dt { color: var(--muted); }
+.readout dd { margin: 0; text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.callout { margin: 0; font-size: 13px; padding: 7px 9px; border-radius: 6px; background: var(--tint); color: var(--ink); }
+.callout.hit { border-left: 3px solid var(--conj); }
+
+.notes { display: grid; gap: 12px; }
+.notes > h2 { margin: 6px 0 0; font-size: 20px; font-weight: 600; letter-spacing: -.01em; }
+.conv { margin: 0; color: var(--muted); max-width: 80ch; }
+.note-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 12px; }
+.note-grid article { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; min-width: 0; }
+.note-grid h3 { margin: 0 0 6px; font-size: 15px; font-weight: 600; }
+.note-grid p { margin: 6px 0; }
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: 2px 0; }
+footer { color: var(--muted); font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Analysis of the sub-Laplacian</p>
+    <h1>Heisenberg Sphere Explorer</h1>
+    <p class="lede">The first Heisenberg group in exponential coordinates $(x,y,t)$: metric spheres, the geodesics that sweep them out, and the helices along which the sub-Riemannian X-ray transform integrates.</p>
+  </header>
+
+  <div class="app">
+    <section class="stage" id="stage" aria-label="3D view of the Heisenberg group">
+      <canvas id="view"></canvas>
+      <div class="labels" id="labels"></div>
+      <p class="scale-note" id="scaleNote">t drawn ×4</p>
+      <p class="hint">Drag to rotate · scroll to zoom · right-drag to pan</p>
+      <ul class="legend" id="legend">
+        <li data-for="sphere"><span class="sw" style="background:var(--sphere)"></span>Sphere $p\cdot S_r$</li>
+        <li data-for="fan"><span class="sw" style="background:var(--geo)"></span>Minimizing geodesics</li>
+        <li data-for="cut"><span class="sw" style="background:var(--cut)"></span>Past the cut locus</li>
+        <li data-for="helix"><span class="sw" style="background:var(--helix)"></span>Helices of charge $\lambda$</li>
+        <li data-for="helix"><span class="sw dot" style="background:var(--conj)"></span>Conjugate points</li>
+        <li><span class="sw dash"></span>Cut locus of $p$</li>
+      </ul>
+      <p class="nogl" id="nogl" hidden>The 3D view needs WebGL, which this browser didn't provide. The formulas below still apply.</p>
+    </section>
+
+    <aside class="panel" aria-label="Controls">
+      <div class="box">
+        <h2>Scenes</h2>
+        <div class="presets" id="presets">
+          <button type="button" data-preset="unit">Unit sphere</button>
+          <button type="button" data-preset="cut">Cut locus</button>
+          <button type="button" data-preset="poles">Helices through the poles</button>
+          <button type="button" data-preset="shear">Left translation</button>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Sphere and geodesics from p</h2>
+        <label class="toggle"><input type="checkbox" id="t-sphere"> Sphere of radius r</label>
+        <label class="toggle"><input type="checkbox" id="t-fan"> Geodesics of length r</label>
+        <label class="toggle"><input type="checkbox" id="t-cut"> Continue past the cut locus</label>
+        <div class="slider">
+          <div class="lab"><label for="s-r">Radius r</label><output id="o-r"></output></div>
+          <input type="range" id="s-r" min="0.1" max="2" step="0.01">
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>X-ray helices through p</h2>
+        <label class="toggle"><input type="checkbox" id="t-helix"> Geodesics of charge λ</label>
+        <div class="slider">
+          <div class="lab"><label for="s-lam">Charge λ</label><output id="o-lam"></output></div>
+          <input type="range" id="s-lam" min="-4" max="4" step="0.05">
+        </div>
+        <div class="slider">
+          <div class="lab"><label for="s-dir">Directions θ</label><output id="o-dir"></output></div>
+          <input type="range" id="s-dir" min="1" max="12" step="1">
+        </div>
+        <div class="slider">
+          <div class="lab"><label for="s-turns">Turns each way</label><output id="o-turns"></output></div>
+          <input type="range" id="s-turns" min="0.25" max="3" step="0.05">
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Center p = (a + ib, c)</h2>
+        <div class="xy">
+          <div class="slider">
+            <div class="lab"><label for="s-a">a</label><output id="o-a"></output></div>
+            <input type="range" id="s-a" min="-2" max="2" step="0.05">
+          </div>
+          <div class="slider">
+            <div class="lab"><label for="s-b">b</label><output id="o-b"></output></div>
+            <input type="range" id="s-b" min="-2" max="2" step="0.05">
+          </div>
+          <div class="slider">
+            <div class="lab"><label for="s-c">c</label><output id="o-c"></output></div>
+            <input type="range" id="s-c" min="-1" max="1" step="0.01">
+          </div>
+        </div>
+        <div class="slider">
+          <div class="lab"><label for="s-k">Vertical scale (drawing only)</label><output id="o-k"></output></div>
+          <input type="range" id="s-k" min="1" max="8" step="0.5">
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Readout</h2>
+        <dl class="readout" id="readout"></dl>
+        <p class="callout" id="callout"></p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="notes" aria-labelledby="notes-h">
+    <h2 id="notes-h">The formulas behind the picture</h2>
+    <p class="conv">The group law above is Thangavelu's group law composed with $(z,t)\mapsto(\bar z,t)$. The vertical scale slider stretches the drawing only. Every formula and readout uses the true $t$.</p>
+    <div class="note-grid">
+      <article>
+        <h3>Group and horizontal frame</h3>
+        <p>On $\mathbb H^1=\mathbb C\times\mathbb R$, with $z=x+iy$,</p>
+        \[(z,t)\cdot(w,s)=\big(z+w,\;t+s+\tfrac12\operatorname{Im}(\bar z w)\big),\]
+        \[X=\partial_x-\tfrac12 y\,\partial_t,\quad Y=\partial_y+\tfrac12 x\,\partial_t,\quad [X,Y]=\partial_t .\]
+        <p>$X$ and $Y$ are declared orthonormal. A curve is horizontal when $\dot t=\tfrac12(x\dot y-y\dot x)$, so $t$ grows by the signed area that $z$ sweeps out.</p>
+        <p>The center sliders apply left translation by $p=(a+ib,c)$:</p>
+        \[(z,t)\mapsto\big(a+ib+z,\;c+t+\tfrac12(ay-bx)\big).\]
+      </article>
+      <article>
+        <h3>Geodesics from the origin</h3>
+        <p>Unit speed, initial direction $e^{i\theta}$, charge $\lambda\in\mathbb R$:</p>
+        \[z(s)=e^{i\theta}\,\frac{e^{i\lambda s}-1}{i\lambda},\qquad t(s)=\frac{\lambda s-\sin\lambda s}{2\lambda^{2}} .\]
+        <p>For $\lambda=0$ this is the line $z=se^{i\theta}$, $t=0$. Otherwise $z$ runs round a circle of radius $1/|\lambda|$ through $0$.</p>
+        <p>The geodesic minimizes length exactly for $0\le s\le 2\pi/|\lambda|$. At $s=2\pi/|\lambda|$ it meets the $t$-axis at height $\operatorname{sgn}(\lambda)\,\pi/\lambda^{2}$. So the cut locus of $0$ is the $t$-axis minus $0$. In the view, the grey parts of the fan lie past this point.</p>
+      </article>
+      <article>
+        <h3>Spheres</h3>
+        <p>The sphere $S_r$ of radius $r$ is swept out by the endpoints of the minimizing geodesics of length $r$. With $\mu=\lambda r\in[-2\pi,2\pi]$,</p>
+        \[|z|=r\,\frac{2\sin(\mu/2)}{\mu},\qquad t=r^{2}\,\frac{\mu-\sin\mu}{2\mu^{2}} .\]
+        <p>So $S_r=\delta_r S_1$ with $\delta_r(z,t)=(rz,r^{2}t)$, and $S_r$ is a surface of revolution about the $t$-axis. The poles $(0,\pm r^{2}/4\pi)$ sit at the bottom of conical dimples, where the sphere is not smooth.</p>
+      </article>
+      <article>
+        <h3>Helices and the X-ray transform</h3>
+        <p>The geodesics of charge $\lambda\neq0$ through $p$ are the helices $s\mapsto p\cdot\gamma_{\theta,\lambda}(s)$, $s\in\mathbb R$. They have radius $1/|\lambda|$ and rise $\pi/\lambda^{2}$ per turn. The X-ray transform at charge $\lambda$ integrates over them:</p>
+        \[I_{\theta,\lambda}f(p)=\int_{\mathbb R}f\big(p\cdot\gamma_{\theta,\lambda}(s)\big)\,ds .\]
+        <p>Every helix of charge $\lambda$ through $p$ passes through the conjugate points $p\cdot(0,k\pi/\lambda^{2})$, $k\in\mathbb Z$. When $|\lambda|=2\pi/r$ the first of them are the poles of $p\cdot S_r$.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer>Drawn with three.js. Formulas typeset with MathJax.</footer>
+</div>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["\\[", "\\]"]] },
+  svg: { fontCache: "global" },
+  options: { enableMenu: false }
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function () {
+  "use strict";
+  var PI = Math.PI, TAU = 2 * Math.PI;
+  function $(id) { return document.getElementById(id); }
+
+  // ---------- state ----------
+  var S = { a: 0, b: 0, c: 0, r: 1, sphere: true, fan: true, cut: false, helix: true, lamPi: 2, nDir: 6, turns: 1.25, k: 4 };
+  var PRESETS = {
+    unit:  { a: 0, b: 0, c: 0, r: 1, sphere: true, fan: true, cut: false, helix: false, k: 4 },
+    cut:   { a: 0, b: 0, c: 0, r: 1.6, sphere: true, fan: true, cut: true, helix: false, k: 4 },
+    poles: { a: 0, b: 0, c: 0, r: 1, sphere: true, fan: false, cut: false, helix: true, lamPi: 2, nDir: 8, turns: 1.25, k: 4 },
+    shear: { a: 1.2, b: -0.6, c: 0, r: 1, sphere: true, fan: true, cut: false, helix: true, lamPi: 2, nDir: 6, turns: 1.25, k: 4 }
+  };
+  // charges of the fan, fixed, so that a growing radius pushes more of them past the cut locus
+  var FAN_LAMS = [0, 0.5, -0.5, 1, -1, 1.5, -1.5, 2, -2, 3, -3, 4, -4].map(function (v) { return v * PI; });
+  var FAN_DIRS = 8;
+
+  // ---------- geometry (normalization defined above) ----------
+  // unit-speed geodesic from 0: z = e^{iθ}(e^{iλs}-1)/(iλ), t = (λs - sin λs)/(2λ²)
+  function geod(th, lam, s) {
+    var u = lam * s, re, im, t;
+    if (Math.abs(u) < 1e-4) {
+      re = s - lam * lam * s * s * s / 6; im = lam * s * s / 2; t = lam * s * s * s / 12;
+    } else {
+      re = Math.sin(u) / lam; im = (1 - Math.cos(u)) / lam; t = (u - Math.sin(u)) / (2 * lam * lam);
+    }
+    var c = Math.cos(th), sn = Math.sin(th);
+    return [c * re - sn * im, sn * re + c * im, t];
+  }
+  // left translation by p = (a+ib, c): t-part gains ½ Im(conj(p_z) z) = ½(a y - b x)
+  function tr(q) {
+    return [S.a + q[0], S.b + q[1], S.c + q[2] + 0.5 * (S.a * q[1] - S.b * q[0])];
+  }
+  // drawing coordinates: t stretched by k, t axis = scene z
+  function D(q) { return new THREE.Vector3(q[0], q[1], S.k * q[2]); }
+
+  // ---------- three.js setup ----------
+  var stage = $("stage"), canvas = $("view");
+  if (typeof THREE === "undefined" || !THREE.OrbitControls) { $("nogl").hidden = false; return; }
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); }
+  catch (e) { $("nogl").hidden = false; return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(36, 1, 0.01, 400);
+  camera.up.set(0, 0, 1);
+  camera.position.set(3.6, -4.6, 2.6);
+  var controls = new THREE.OrbitControls(camera, canvas);
+  controls.enableDamping = true; controls.dampingFactor = 0.09;
+  controls.target.set(0, 0, 0);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.62));
+  var d1 = new THREE.DirectionalLight(0xffffff, 0.55); d1.position.set(3, -2, 6); scene.add(d1);
+  var d2 = new THREE.DirectionalLight(0xffffff, 0.25); d2.position.set(-3, 4, -3); scene.add(d2);
+
+  var M = {
+    sphere: new THREE.MeshPhongMaterial({ transparent: true, opacity: 0.27, side: THREE.DoubleSide, depthWrite: false, shininess: 30 }),
+    lat: new THREE.LineBasicMaterial({ transparent: true, opacity: 0.6 }),
+    geo: new THREE.LineBasicMaterial({ transparent: true, opacity: 0.95 }),
+    cut: new THREE.LineBasicMaterial({ transparent: true, opacity: 0.85 }),
+    helix: new THREE.MeshPhongMaterial({ shininess: 50 }),
+    conj: new THREE.MeshPhongMaterial({ shininess: 60 }),
+    center: new THREE.MeshPhongMaterial({ shininess: 20 }),
+    axisP: new THREE.LineDashedMaterial({ dashSize: 0.07, gapSize: 0.06 }),
+    axes: new THREE.LineBasicMaterial({}),
+    grid: new THREE.LineBasicMaterial({})
+  };
+
+  var G = { grid: new THREE.Group(), sphere: new THREE.Group(), fan: new THREE.Group(), helix: new THREE.Group(), marks: new THREE.Group() };
+  Object.keys(G).forEach(function (k) { scene.add(G[k]); });
+
+  function clear(g) {
+    while (g.children.length) { var o = g.children.pop(); if (o.geometry) o.geometry.dispose(); }
+  }
+  function segs(arr, mat) {
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(arr, 3));
+    return new THREE.LineSegments(geo, mat);
+  }
+  function polyline(pts, mat) {
+    return new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), mat);
+  }
+
+  // ---------- builders ----------
+  function buildGrid() {
+    clear(G.grid);
+    var g = [], R = 3, st = 0.5;
+    for (var v = -R; v <= R + 1e-9; v += st) { g.push(v, -R, 0, v, R, 0, -R, v, 0, R, v, 0); }
+    G.grid.add(segs(g, M.grid));
+    G.grid.add(segs([-R, 0, 0, R, 0, 0, 0, -R, 0, 0, R, 0, 0, 0, -2.6, 0, 0, 2.6], M.axes));
+  }
+
+  // endpoint of the geodesic of length r with μ = λr
+  function endpoint(th, mu, r) {
+    if (Math.abs(mu) < 1e-12) return [r * Math.cos(th), r * Math.sin(th), 0];
+    return geod(th, mu / r, r);
+  }
+
+  function buildSphere() {
+    clear(G.sphere);
+    if (!S.sphere) return;
+    var nT = 96, nM = 120, r = S.r, pos = [], idx = [];
+    for (var j = 0; j <= nM; j++) {
+      var mu = -TAU + 2 * TAU * j / nM;
+      for (var i = 0; i <= nT; i++) {
+        var v = D(tr(endpoint(TAU * i / nT, mu, r)));
+        pos.push(v.x, v.y, v.z);
+      }
+    }
+    for (j = 0; j < nM; j++) for (i = 0; i < nT; i++) {
+      var a = j * (nT + 1) + i, b = a + 1, c = a + nT + 1, d = c + 1;
+      idx.push(a, c, b, b, c, d);
+    }
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+    geo.setIndex(idx);
+    geo.computeVertexNormals();
+    var mesh = new THREE.Mesh(geo, M.sphere);
+    mesh.renderOrder = 2;
+    G.sphere.add(mesh);
+    // latitude circles: fixed μ, so fixed |z| and t
+    [-1.5, -1, -0.5, 0, 0.5, 1, 1.5].forEach(function (m) {
+      var pts = [];
+      for (var i = 0; i <= 128; i++) pts.push(D(tr(endpoint(TAU * i / 128, m * PI, r))));
+      G.sphere.add(polyline(pts, M.lat));
+    });
+  }
+
+  function buildFan() {
+    clear(G.fan);
+    if (!S.fan) return;
+    var A = [], B = [], r = S.r, N = 120;
+    for (var j = 0; j < FAN_DIRS; j++) {
+      var th = TAU * j / FAN_DIRS + 0.2;
+      FAN_LAMS.forEach(function (lam) {
+        var sCut = lam === 0 ? Infinity : TAU / Math.abs(lam);
+        var ss = [];
+        for (var i = 0; i <= N; i++) ss.push(r * i / N);
+        if (sCut < r) { ss.push(sCut); ss.sort(function (x, y) { return x - y; }); }
+        var prev = null, prevS = 0;
+        ss.forEach(function (s) {
+          var q = D(tr(geod(th, lam, s)));
+          if (prev) {
+            var mid = 0.5 * (prevS + s);
+            if (mid <= sCut) A.push(prev.x, prev.y, prev.z, q.x, q.y, q.z);
+            else if (S.cut) B.push(prev.x, prev.y, prev.z, q.x, q.y, q.z);
+          }
+          prev = q; prevS = s;
+        });
+      });
+    }
+    if (A.length) G.fan.add(segs(A, M.geo));
+    if (B.length) G.fan.add(segs(B, M.cut));
+  }
+
+  function buildHelix() {
+    clear(G.helix);
+    if (!S.helix) return;
+    var lam = S.lamPi * PI, flat = Math.abs(lam) < 1e-9;
+    var T = flat ? 2.5 : S.turns * TAU / Math.abs(lam);
+    var Mn = flat ? 40 : Math.max(240, Math.round(220 * S.turns));
+    for (var j = 0; j < S.nDir; j++) {
+      var th = TAU * j / S.nDir, pts = [];
+      for (var i = 0; i <= Mn; i++) pts.push(D(tr(geod(th, lam, -T + 2 * T * i / Mn))));
+      var tube = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), Mn, 0.012, 6, false);
+      G.helix.add(new THREE.Mesh(tube, M.helix));
+    }
+    if (!flat) {
+      var K = Math.floor(S.turns + 1e-9), ball = new THREE.SphereGeometry(0.038, 18, 12);
+      for (var k = -K; k <= K; k++) {
+        if (k === 0) continue;
+        var m = new THREE.Mesh(ball, M.conj);
+        m.position.copy(D(tr([0, 0, k * PI / (lam * lam)])));
+        G.helix.add(m);
+      }
+    }
+  }
+
+  function buildMarks() {
+    clear(G.marks);
+    var H = 2.8 / S.k;
+    var axis = polyline([D(tr([0, 0, -H])), D(tr([0, 0, H]))], M.axisP);
+    axis.computeLineDistances();
+    G.marks.add(axis);
+    var dot = new THREE.Mesh(new THREE.SphereGeometry(0.045, 20, 14), M.center);
+    dot.position.copy(D(tr([0, 0, 0])));
+    G.marks.add(dot);
+  }
+
+  // ---------- theme ----------
+  function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function applyTheme() {
+    scene.background = new THREE.Color(css("--stage"));
+    M.sphere.color.set(css("--sphere")); M.lat.color.set(css("--sphere"));
+    M.geo.color.set(css("--geo")); M.cut.color.set(css("--cut"));
+    M.helix.color.set(css("--helix")); M.conj.color.set(css("--conj"));
+    M.center.color.set(css("--ink")); M.axisP.color.set(css("--muted"));
+    M.axes.color.set(css("--cut")); M.grid.color.set(css("--grid"));
+  }
+  try {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
+  } catch (e) {}
+  new MutationObserver(applyTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "class", "style"] });
+
+  // ---------- labels ----------
+  var labelBox = $("labels");
+  var LABELS = [
+    { txt: "x", at: function () { return new THREE.Vector3(3.2, 0, 0); } },
+    { txt: "y", at: function () { return new THREE.Vector3(0, 3.2, 0); } },
+    { txt: "t", at: function () { return new THREE.Vector3(0, 0, 2.8); } },
+    { txt: "p", cls: "p", at: function () { return D(tr([0, 0, 0])).add(new THREE.Vector3(0.12, -0.12, 0.1)); } }
+  ];
+  LABELS.forEach(function (L) {
+    L.el = document.createElement("span"); L.el.textContent = L.txt;
+    if (L.cls) L.el.className = L.cls;
+    labelBox.appendChild(L.el);
+  });
+  function placeLabels() {
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    LABELS.forEach(function (L) {
+      var v = L.at().project(camera);
+      L.el.hidden = v.z > 1;
+      L.el.style.left = ((v.x + 1) / 2 * w) + "px";
+      L.el.style.top = ((1 - v.y) / 2 * h) + "px";
+    });
+  }
+
+  // ---------- controls ----------
+  function fmt(x, d) { d = d == null ? 2 : d; var s = x.toFixed(d); return s === "-0.00" || s === "-0.000" ? s.slice(1) : s; }
+  var SL = {
+    r: { el: "s-r", out: "o-r", f: function (v) { return fmt(v); } },
+    lamPi: { el: "s-lam", out: "o-lam", f: function (v) { return Math.abs(v) < 1e-9 ? "0" : fmt(v) + "π"; } },
+    nDir: { el: "s-dir", out: "o-dir", f: function (v) { return String(v); } },
+    turns: { el: "s-turns", out: "o-turns", f: function (v) { return fmt(v); } },
+    a: { el: "s-a", out: "o-a", f: function (v) { return fmt(v); } },
+    b: { el: "s-b", out: "o-b", f: function (v) { return fmt(v); } },
+    c: { el: "s-c", out: "o-c", f: function (v) { return fmt(v); } },
+    k: { el: "s-k", out: "o-k", f: function (v) { return "×" + (v % 1 ? v.toFixed(1) : v); } }
+  };
+  var TG = { sphere: "t-sphere", fan: "t-fan", cut: "t-cut", helix: "t-helix" };
+
+  function syncInputs() {
+    Object.keys(SL).forEach(function (k) { $(SL[k].el).value = S[k]; $(SL[k].out).textContent = SL[k].f(S[k]); });
+    Object.keys(TG).forEach(function (k) { $(TG[k]).checked = S[k]; });
+    $("t-cut").disabled = !S.fan;
+    $("scaleNote").textContent = "t drawn ×" + (S.k % 1 ? S.k.toFixed(1) : S.k);
+    document.querySelectorAll("#legend li[data-for]").forEach(function (li) {
+      var key = li.getAttribute("data-for");
+      li.hidden = key === "cut" ? !(S.fan && S.cut) : !S[key];
+    });
+  }
+
+  function retarget() {
+    var nt = D(tr([0, 0, 0]));
+    var delta = nt.clone().sub(controls.target);
+    camera.position.add(delta);
+    controls.target.copy(nt);
+  }
+
+  function updateReadout() {
+    var lam = S.lamPi * PI, r = S.r, rows = [];
+    rows.push(["Center p", "(" + fmt(S.a) + ", " + fmt(S.b) + ", " + fmt(S.c) + ")"]);
+    rows.push(["Poles of p·S_r", "t = " + fmt(S.c) + " ± " + fmt(r * r / (4 * PI), 3)]);
+    if (Math.abs(lam) > 1e-9) {
+      rows.push(["Helix radius 1/|λ|", fmt(1 / Math.abs(lam), 3)]);
+      rows.push(["Rise per turn π/λ²", fmt(PI / (lam * lam), 3)]);
+      rows.push(["Cut length 2π/|λ|", fmt(TAU / Math.abs(lam), 3)]);
+    } else {
+      rows.push(["Charge λ = 0", "horizontal lines"]);
+    }
+    $("readout").innerHTML = rows.map(function (r) { return "<dt>" + r[0] + "</dt><dd>" + r[1] + "</dd>"; }).join("");
+    var target = 2 / r, co = $("callout");
+    if (Math.abs(Math.abs(S.lamPi) - target) <= 0.026) {
+      co.className = "callout hit";
+      co.textContent = "|λ| = 2π/r: the first conjugate points of p are the poles of p·S_r.";
+    } else {
+      co.className = "callout";
+      co.textContent = target <= 4
+        ? "Set λ to ±" + fmt(target) + "π to send the helices through the poles of p·S_r."
+        : "At this radius the poles need |λ| = " + fmt(target) + "π, beyond the slider.";
+    }
+  }
+
+  function rebuild(parts) {
+    if (parts.indexOf("sphere") >= 0) buildSphere();
+    if (parts.indexOf("fan") >= 0) buildFan();
+    if (parts.indexOf("helix") >= 0) buildHelix();
+    if (parts.indexOf("marks") >= 0) buildMarks();
+    syncInputs(); updateReadout();
+  }
+  var ALL = ["sphere", "fan", "helix", "marks"];
+  var DEPS = { r: ["sphere", "fan"], lamPi: ["helix"], nDir: ["helix"], turns: ["helix"], a: ALL, b: ALL, c: ALL, k: ALL,
+               sphere: ["sphere"], fan: ["fan"], cut: ["fan"], helix: ["helix"] };
+
+  function clearPreset() { document.querySelectorAll("#presets button").forEach(function (b) { b.setAttribute("aria-pressed", "false"); }); }
+
+  Object.keys(SL).forEach(function (k) {
+    $(SL[k].el).addEventListener("input", function (e) {
+      S[k] = parseFloat(e.target.value);
+      clearPreset(); rebuild(DEPS[k]);
+      if (k === "a" || k === "b" || k === "c" || k === "k") retarget();
+    });
+  });
+  Object.keys(TG).forEach(function (k) {
+    $(TG[k]).addEventListener("change", function (e) { S[k] = e.target.checked; clearPreset(); rebuild(DEPS[k]); });
+  });
+  document.querySelectorAll("#presets button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var P = PRESETS[btn.getAttribute("data-preset")];
+      Object.keys(P).forEach(function (k) { S[k] = P[k]; });
+      rebuild(ALL); retarget();
+      clearPreset(); btn.setAttribute("aria-pressed", "true");
+    });
+  });
+
+  // ---------- size + loop ----------
+  function resize() {
+    var w = stage.clientWidth, h = stage.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(stage);
+  window.addEventListener("resize", resize);
+
+  function loop() {
+    controls.update();
+    renderer.render(scene, camera);
+    placeLabels();
+    requestAnimationFrame(loop);
+  }
+
+  applyTheme(); buildGrid(); rebuild(ALL); resize(); loop();
+})();
+</script>
