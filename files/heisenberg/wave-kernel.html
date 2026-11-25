@@ -98,6 +98,10 @@ select { font: inherit; padding: 5px 8px; color: var(--ink); background: var(--b
 .checks { margin: 6px 0 0; padding: 0; list-style: none; display: grid; gap: 4px; font-size: 14px; }
 .checks b { font-family: var(--font-mono); font-weight: 500; font-variant-numeric: tabular-nums; }
 mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: 2px 0; }
+#references h3 { margin: 18px 0 6px; font-size: 15px; font-weight: 600; }
+.references-list { margin: 6px 0 16px; padding-left: 24px; max-width: 94ch; }
+.references-list li { margin-bottom: 14px; padding-left: 4px; }
+.references-list a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
 footer { color: var(--muted); font-size: 13px; }
 </style>
 
@@ -246,6 +250,42 @@ footer { color: var(--muted); font-size: 13px; }
       <details>
         <summary>What the full-kernel data show</summary>
         <p id="observed"></p>
+      </details>
+      <details id="references" open>
+        <summary>References and further reading</summary>
+        <h3>Wave kernels and geodesic arrivals</h3>
+        <ol class="references-list">
+          <li>
+            <p><strong>Adrian I. Nachman (1982).</strong> <a href="https://doi.org/10.1080/03605308208820236" target="_blank" rel="noopener noreferrer"><cite>The wave equation on the Heisenberg group</cite></a>. <em>Communications in Partial Differential Equations</em> <strong>7</strong>(6), 675–714.</p>
+            <p class="hint">Fundamental solution and the geometry of its singularities.</p>
+          </li>
+          <li>
+            <p><strong>Peter C. Greiner, David Holcman and Yakar Kannai (2002).</strong> <a href="https://doi.org/10.1215/S0012-7094-02-11426-4" target="_blank" rel="noopener noreferrer"><cite>Wave kernels related to second-order operators</cite></a>. <em>Duke Mathematical Journal</em> <strong>114</strong>(2), 329–386.</p>
+            <p class="hint">Explicit subelliptic wave kernels and propagation of their singularities, including the Heisenberg sub-Laplacian.</p>
+          </li>
+          <li>
+            <p><strong>Peter A. Perry (2003).</strong> <a href="https://doi.org/10.1081/PDE-120020495" target="_blank" rel="noopener noreferrer"><cite>Carnot Geometry and the Resolvent of the Sub-Laplacian for the Heisenberg Group</cite></a>. <em>Communications in Partial Differential Equations</em> <strong>28</strong>(3–4), 745–769.</p>
+            <p class="hint">Resolvent asymptotics and wave-kernel singularities at geodesic lengths; see the introduction and Corollary 1.</p>
+          </li>
+        </ol>
+        <h3>Microlocal propagation and wave traces</h3>
+        <ol class="references-list" start="4">
+          <li>
+            <p><strong>Yves Colin de Verdière (2023).</strong> <a href="https://doi.org/10.1515/ans-2022-0054" target="_blank" rel="noopener noreferrer"><cite>A proof of a trace formula by Richard Melrose</cite></a>. <em>Advanced Nonlinear Studies</em> <strong>23</strong>(1), article 20220054.</p>
+            <p class="hint">Wavefront-set propagation, the local Heisenberg wave trace, and the trace formula on closed contact three-manifolds; see Theorem 3.2 and Sections 4–5.</p>
+          </li>
+          <li>
+            <p><strong>Cyril Letrouit (2022).</strong> <a href="https://doi.org/10.1007/s00220-022-04415-9" target="_blank" rel="noopener noreferrer"><cite>Propagation of Singularities for Subelliptic Wave Equations</cite></a>. <em>Communications in Mathematical Physics</em> <strong>395</strong>, 143–178. <a href="https://arxiv.org/abs/2106.07216" target="_blank" rel="noopener noreferrer">Open preprint</a>.</p>
+            <p class="hint">Microlocal propagation along null-bicharacteristics and abnormal extremals; see Theorems 1 and 4.</p>
+          </li>
+        </ol>
+        <h3>Strichartz estimates and Landau transport</h3>
+        <ol class="references-list" start="6">
+          <li>
+            <p><strong>Hajer Bahouri, Davide Barilari and Isabelle Gallagher (2021).</strong> <a href="https://doi.org/10.1007/s00041-021-09822-5" target="_blank" rel="noopener noreferrer"><cite>Strichartz Estimates and Fourier Restriction Theorems on the Heisenberg Group</cite></a>. <em>Journal of Fourier Analysis and Applications</em> <strong>27</strong>, article 21. <a href="https://arxiv.org/abs/1911.03729" target="_blank" rel="noopener noreferrer">Open preprint</a>.</p>
+            <p class="hint">Strichartz estimates for Schrödinger and wave equations, with explicit Schrödinger transport subspaces in equations (1.16)–(1.17) of the preprint.</p>
+          </li>
+        </ol>
       </details>
     </div>
   </section>
