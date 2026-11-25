@@ -40,6 +40,7 @@ body { background: var(--bg); color: var(--ink); font-family: var(--font-body); 
 .eyebrow { margin: 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 h1 { margin: 0; font-size: clamp(26px, 3.4vw, 34px); font-weight: 600; letter-spacing: -.015em; line-height: 1.15; text-wrap: balance; }
 .lede { margin: 0; color: var(--muted); }
+.lede a { color: var(--accent); }
 .app { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; align-items: start; }
 @media (max-width: 880px) { .app { grid-template-columns: minmax(0, 1fr); } }
 .figs { display: grid; gap: 12px; min-width: 0; }
@@ -105,6 +106,7 @@ footer { color: var(--muted); font-size: 13px; }
     <p class="eyebrow">Analysis of the sub-Laplacian</p>
     <h1>Heisenberg Wave Kernel</h1>
     <p class="lede">The wave equation for the sub-Laplacian on $\mathbb H^1$, started from a Dirac mass at the origin. Shown in the plane $y=0$; the solution is rotationally symmetric about the $t$-axis, so this slice shows all of it.</p>
+    <p class="lede">These animations also relate to the paper <a href="https://arxiv.org/abs/2501.04415"><i>Refined Strichartz Estimates for Sub-Laplacians in Heisenberg and H-type Groups</i></a> (arXiv:2501.04415), joint work with <a href="https://www.math.unipd.it/~barilari/">Davide Barilari</a>.</p>
   </header>
 
   <div class="app">
