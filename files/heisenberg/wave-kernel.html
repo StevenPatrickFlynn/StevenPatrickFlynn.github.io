@@ -867,7 +867,7 @@ window.MathJax = {
   // Observers at distance 1 in the plane y = 0 (by rotation, (x, t) stands for every (z, t) with
   // |z| = |x|). Each synced clip starts at s = 0 and plays s at SPEED units per second.
   var SOUND = DATA.sound || null, audio = $("sound-audio");
-  var sound = { active: -1, full: null, open: false };  // the box starts collapsed; the points are on the map either way
+  var sound = { active: -1, full: null, open: false };  // the box starts collapsed; opening it shows the points
   function soundLabel(p) {
     if (p.theta === null) return "Axis · θ = ∞";
     if (p.theta === 0) return "Plane · θ = 0";
@@ -879,7 +879,7 @@ window.MathJax = {
     else for (var m = 1; Math.sqrt(m) <= top; m++) out.push(Math.sqrt(m));
     return out;
   }
-  function soundShown() { return !!SOUND && S.restriction === "full"; }
+  function soundShown() { return !!SOUND && S.restriction === "full" && sound.open; }
   function soundMarkers() {
     if (!soundShown()) return [];
     var w = map.width, h = map.height, r = 9 * dpr;
@@ -973,7 +973,7 @@ window.MathJax = {
       if (sound.full) { endFull(); return; }
       if (sound.active >= 0 && playing) { S.s = timeMin(); audio.currentTime = 0; playAudio(); }
     });
-    function setSoundOpen(open) {  // collapsing silences any clip; the points stay on the map
+    function setSoundOpen(open) {  // collapsing hides the points and silences any clip
       sound.open = open;
       $("sound-toggle").setAttribute("aria-expanded", String(open));
       $("soundBody").hidden = !open;
@@ -995,12 +995,7 @@ window.MathJax = {
       });
       return best;
     }
-    map.addEventListener("click", function (ev) {
-      var i = nearestMarker(ev);
-      if (i < 0) return;
-      if (!sound.open) setSoundOpen(true);  // a point clicked while the box is collapsed opens it
-      selectSound(i);
-    });
+    map.addEventListener("click", function (ev) { var i = nearestMarker(ev); if (i >= 0) selectSound(i); });
     map.addEventListener("mousemove", function (ev) { map.style.cursor = nearestMarker(ev) >= 0 ? "pointer" : ""; });
     updateSound();
   }
